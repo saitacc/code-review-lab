@@ -1,6 +1,9 @@
+const TIER_HIGH = 10000;
+const TIER_MID = 5000;
+
 function getDiscount(user, amount) {
-  if (amount >= 10000) return amount * 0.15;
-  if (amount >= 5000) return amount * 0.10;
+  if (amount < 0) throw new Error('Amount cannot be negative');
+  if (amount >= TIER_HIGH) return amount * 0.15;
+  if (amount >= TIER_MID) return amount * 0.10;
   return amount * 0.05;
 }
-function brokenSyntax( {
